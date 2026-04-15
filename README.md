@@ -1,34 +1,28 @@
 # RAG Chatbot
 
-A Retrieval-Augmented Generation chatbot that answers user questions from uploaded documents using embeddings, vector search, and an LLM.
+A modular Retrieval-Augmented Generation project that indexes PDF documents and retrieves relevant context for user queries.
 
 ## Features
-- Upload and process documents
-- Split text into chunks
-- Generate embeddings
-- Store embeddings in a vector database
-- Retrieve relevant context for user queries
-- Generate context-aware answers
+- Upload PDF documents
+- Extract text using PyPDFLoader
+- Split content into semantic chunks
+- Generate embeddings with Hugging Face
+- Store vectors in FAISS
+- Retrieve top relevant chunks for a question
 
 ## Tech Stack
 - Python
 - Streamlit
 - LangChain
+- Hugging Face Embeddings
 - FAISS
-- OpenAI / HuggingFace embeddings
 
-## Project Workflow
-1. Upload document
-2. Extract text
-3. Split text into chunks
-4. Create embeddings
-5. Store embeddings in FAISS
-6. Retrieve relevant chunks
-7. Generate final answer using LLM
-
-## Folder Structure
-```bash
-src/
+## Project Structure
+```text
 app.py
-requirements.txt
-README.md
+src/
+  loader.py
+  splitter.py
+  embeddings.py
+  vectorstore.py
+  retriever.py
